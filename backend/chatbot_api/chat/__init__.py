@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-module = Blueprint('employees',__name__)
+module = Blueprint('bot',__name__)
 
 @module.route('/', methods=['GET'])
 def post():

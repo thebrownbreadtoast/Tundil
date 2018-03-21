@@ -3,7 +3,7 @@ import pandas as pd
 class filter_data(object):
 
 	def data_filter(self,*args):
-		dataset = pd.read_csv('raw_dataset.csv')
+		dataset = pd.read_csv('data/raw_dataset.csv')
 		source = args[0]
 		filtered_dataset = dataset['source'] == source
 		filtered_text = dataset[filtered_dataset]['text']
@@ -12,7 +12,7 @@ class filter_data(object):
 	def file_write(self,*args):
 		filename = args[0]
 		data = self.data_filter(filename)
-		with open(filename+'.txt', 'w') as file:
+		with open('data/'+filename+'.txt', 'w') as file:
 			for line in data:
 				file.write(line)
 			file.close()
