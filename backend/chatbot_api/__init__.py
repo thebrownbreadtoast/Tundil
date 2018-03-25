@@ -1,5 +1,5 @@
 from flask import Flask
-from chatbot_api.chat import module
+from backend.chatbot_api.chat import module
 
 class chat_init(object):
 

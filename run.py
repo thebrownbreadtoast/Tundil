@@ -1,4 +1,4 @@
-from chatbot_api import chat_init
+from backend.chatbot_api import chat_init
 
 if __name__ == '__main__':
     app = chat_init().server(__name__)
