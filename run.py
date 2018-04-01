@@ -1,2 +1,2 @@
-from backend.chatbot_api import chat_init
-app = chat_init().server(__name__)
+from backend.chatbot_api import Server
+api = Server().init_server(__name__)

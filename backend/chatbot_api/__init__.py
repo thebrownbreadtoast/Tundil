@@ -1,15 +1,18 @@
 from flask import Flask
-from backend.chatbot_api.chat import module
+from flask_sqlalchemy import SQLAlchemy
+from backend.chatbot_api.Bot import module
 
-class chat_init(object):
+class Server(object):
 
     def __init__(self):
-        pass
+        self.db = SQLAlchemy()
 
-    def server(self,name=__name__):
-        app = Flask(name)
-        self.blueprints(app)
-        return app
+    def init_server(self,name=__name__):
+        api = Flask(name)
+        api.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://dadwalakshay:itsaweakpassword@dadwalakshay.mysql.pythonanywhere-services.com/dadwalakshay$tundil'
+        self.db.init_app(api)
+        self.blueprints(api)
+        return api
 
-    def blueprints(self,app):
-        app.register_blueprint(module,url_prefix='/bot')
+    def blueprints(self,api):
+        api.register_blueprint(module,url_prefix='/bot')
