@@ -10,6 +10,6 @@ class User(db.Model):
         self.phone = phone
 
     __tablename__ = 'user'
-    apikey = db.Column(db.String(10),primary_key=True)
+    apikey = db.Column(db.String(10))
     name = db.Column(db.String(20))
-    phone = db.Column(db.BIGINT)
+    phone = db.Column(db.BIGINT,primary_key=True)

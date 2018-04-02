@@ -15,7 +15,7 @@ class Tundil_bot(object):
 	def __init__(self):
 		self.word_embedding_size = 100
 		self.sentence_embedding_size = 300
-		self.weights_file = 'trained_model.h5'
+		self.weights_file = '/home/akshay/Desktop/Tundil/backend/chatbot_model/trained_model.h5'
 		self.dictionary_size = 7000
 		self.maxlen_input = 50
 		self.name_of_computer = 'Tundil'
@@ -48,7 +48,7 @@ class Inference(Tundil_bot):
 	def __init__(self):
 		self.maxlen_input = 50
 		self.dictionary_size = 7000
-		self.vocabulary_file = 'vocabulary'
+		self.vocabulary_file = '/home/akshay/Desktop/Tundil/backend/chatbot_model/vocabulary'
 		self.vocabulary = pickle.load(open(self.vocabulary_file, 'rb'))
 		
 	def tokenize(self,sentence):

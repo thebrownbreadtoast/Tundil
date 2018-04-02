@@ -100,3 +100,7 @@ env/
 
 # mypy
 .mypy_cache/
+*.idea/
+*/.idea
+*.h5
+vocabulary

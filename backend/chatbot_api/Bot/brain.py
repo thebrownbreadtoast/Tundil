@@ -28,11 +28,11 @@ class Brain(object):
             self.db.session.close()
 
         except Exception as e:
-            return "Something went wrong."
+            return e
 
         else:
             return key
 
     def tundil_bot(self,user_query):
         bot_instance = tundil_brain.Inference()
-        return bot_instance.inference(user_query)
+        return bot_instance.inference_reply(user_query)
