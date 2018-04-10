@@ -16,7 +16,7 @@ class Tundil_bot(object):
 		self.word_embedding_size = 100
 		self.sentence_embedding_size = 300
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.weights_file = self.dir_path+'/trained_model.h5'
+		self.weights_file = self.dir_path+'/data/trained_model.h5'
 		self.dictionary_size = 7000
 		self.maxlen_input = 50
 		self.name_of_computer = 'Tundil'
@@ -50,7 +50,7 @@ class Inference(Tundil_bot):
 		self.maxlen_input = 50
 		self.dictionary_size = 7000
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.vocabulary_file = self.dir_path+'/vocabulary'
+		self.vocabulary_file = self.dir_path+'/data/vocabulary'
 		self.vocabulary = pickle.load(open(self.vocabulary_file, 'rb'))
 		
 	def tokenize(self,sentence):
