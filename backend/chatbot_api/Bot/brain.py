@@ -34,5 +34,5 @@ class Brain(object):
             return key
 
     def tundil_bot(self,user_query):
-        bot_instance = tundil_brain.Inference()
+        bot_instance = tundil_brain.Tundil_bot()
         return bot_instance.inference_reply(user_query)
