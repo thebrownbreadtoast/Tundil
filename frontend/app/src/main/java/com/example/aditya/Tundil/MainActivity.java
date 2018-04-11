@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
         protected Void doInBackground(Void... params) {
 
             try {
-                URL url = new URL(ip+":5000/bot/");
+                URL url = new URL(ip+"/bot/");
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("apikey",apikey);

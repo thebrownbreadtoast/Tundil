@@ -111,7 +111,7 @@ public class SignupActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
 
             try {
-                URL url = new URL(ip+":5000/bot/register");
+                URL url = new URL(ip+"/bot/register");
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("Content-Type","application/json");
