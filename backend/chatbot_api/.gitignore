@@ -1,0 +1,18 @@
+__pycache__/
+.Python
+env/
+build/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+# mkdocs documentation
+/site
