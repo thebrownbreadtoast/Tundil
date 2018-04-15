@@ -90,12 +90,3 @@ class Tundil_bot(object):
 		processed_reply = self.preprocess(predout[start_index:end_index])
 		last_text = user_query
 		return processed_reply
-
-	def free_memory(self):
-		load_model.Tundil_model().free_memory()
-		del self.model, self.vocabulary
-		gc.collect()
-
-if __name__ == '__main__':
-	pass
-

@@ -21,7 +21,3 @@ class Tundil_model(object):
 		self.model.load_weights(self.weights_file)
 		self.model.compile(loss='categorical_crossentropy',optimizer='adam')
 		return self.model, self.vocabulary
-
-	def free_memory(self):
-		del self.model, self.vocabulary
-		gc.collect()

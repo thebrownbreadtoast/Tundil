@@ -12,7 +12,6 @@ class Brain(object):
         return ''.join(random.choice(string.ascii_letters+string.digits) for i in range(10)).lower()
 
     def user_validation(self,apikey):
-        # fetch = User.query.filter_by(apikey = apikey).count()
         fetch = self.db.session.query(User).filter_by(apikey = apikey).count()
         if fetch == 0:
             return False
@@ -36,3 +35,6 @@ class Brain(object):
     def tundil_bot(self,user_query):
         bot_instance = tundil_brain.Tundil_bot()
         return bot_instance.inference_reply(user_query)
+
+    def __del__(self):
+        pass
