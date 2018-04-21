@@ -1,5 +1,5 @@
 from flask import Blueprint
-import json
+import json, gc
 
 module = Blueprint('bot',__name__)
 
@@ -7,9 +7,7 @@ module = Blueprint('bot',__name__)
 def post():
     from backend.chatbot_api.Bot.views import Bot
     inference_response = Bot().bot_reply()
-    reply = inference_response.get_data(as_text=True)
-    del inference_response
-    return reply
+    return inference_response
 
 @module.route('/register', methods=['POST'])
 def register():

@@ -35,6 +35,3 @@ class Brain(object):
     def tundil_bot(self,user_query):
         bot_instance = tundil_brain.Tundil_bot()
         return bot_instance.inference_reply(user_query)
-
-    def __del__(self):
-        pass

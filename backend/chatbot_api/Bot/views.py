@@ -21,6 +21,3 @@ class Bot(object):
         name = user_data['name']
         phone = user_data['phone']
         return jsonify({"reply":str(Brain().user_register(name,phone))})
-
-    def __del__(self):
-        pass

@@ -90,3 +90,7 @@ class Tundil_bot(object):
 		processed_reply = self.preprocess(predout[start_index:end_index])
 		last_text = user_query
 		return processed_reply
+
+	def __del__(self):
+		from keras import backend as K
+		K.clear_session()
