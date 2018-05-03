@@ -35,3 +35,10 @@ class Brain(object):
     def tundil_bot(self,user_query):
         bot_instance = tundil_brain.Tundil_bot()
         return bot_instance.inference_reply(user_query)
+        # return str(bot_instance.inference_reply(user_query)+self.computing_usage())
+
+    def computing_usage(self):
+        import psutil, os
+        process = psutil.Process(os.getpid())
+        ram = process.memory_info().rss
+        return '{}MB RAM used on Server.'.format(ram/1048576)

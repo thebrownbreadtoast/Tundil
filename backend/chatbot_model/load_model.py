@@ -2,7 +2,6 @@ from keras.models import model_from_json
 import numpy as np
 import pickle
 import os
-import gc
 
 class Tundil_model(object):
 

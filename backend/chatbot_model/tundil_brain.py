@@ -1,7 +1,9 @@
-import nltk
-import numpy as np
-from backend.chatbot_model import load_model
-import gc
+try:
+	import nltk
+	import numpy as np
+	from backend.chatbot_model import load_model
+except:
+	import load_model
 
 class Tundil_bot(object):
 
@@ -78,11 +80,6 @@ class Tundil_bot(object):
 
 	def inference_reply(self,user_query):
 		prob = 0
-		last_query  = ' '
-		last_text = ''
-		if prob > 0.2:
-			user_query = last_text + ' ' + user_query
-		
 		tokenize_user_query = self.tokenize(user_query)
 		predout, prob = self.greedy_decoder(tokenize_user_query[0:1])
 		start_index = predout.find('BOS')
@@ -94,3 +91,10 @@ class Tundil_bot(object):
 	def __del__(self):
 		from keras import backend as K
 		K.clear_session()
+
+if __name__ == '__main__':
+	bot_obj = Tundil_bot()
+	while True:
+		user_ip = input('You>> ')
+		reply = bot_obj.inference_reply(user_ip)
+		print("Bot>> "+reply)
